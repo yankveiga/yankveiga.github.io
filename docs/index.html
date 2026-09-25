@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Portfólio de Yan Veiga, desenvolvedor de interfaces, automações e sistemas para projetos acadêmicos.">
+    <meta name="theme-color" content="#faf8f0">
+    <title>Yan Veiga | Portfólio</title>
+    <script>
+      (() => {
+        try {
+          const savedTheme = localStorage.getItem("portfolio-theme");
+          const preferredTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+          document.documentElement.dataset.theme = savedTheme || preferredTheme;
+        } catch {
+          document.documentElement.dataset.theme = "light";
+        }
+      })();
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="#inicio" aria-label="Voltar ao início">Yan Veiga</a>
+      <button class="menu-button" type="button" aria-label="Abrir menu" aria-expanded="false">
+        <span></span><span></span>
+      </button>
+      <nav class="main-nav" aria-label="Navegação principal">
+        <a href="#projetos">Projetos</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#contato">Contato</a>
+        <button class="theme-toggle" type="button" aria-label="Ativar modo escuro" title="Ativar modo escuro">
+          <span class="moon-icon" aria-hidden="true">☾</span>
+          <span class="sun-icon" aria-hidden="true">☀</span>
+        </button>
+        <a class="nav-cta" href="https://github.com/yankveiga" target="_blank" rel="noreferrer">GitHub</a>
+      </nav>
+      <span class="scroll-progress" aria-hidden="true"></span>
+    </header>
+
+    <main id="inicio">
+      <section class="hero section reveal">
+        <div class="hero-copy">
+          <p class="eyebrow">Web designer e desenvolvedor front-end</p>
+          <h1>Yan Veiga</h1>
+          <p class="hero-role">Interfaces claras para produtos que resolvem problemas reais.</p>
+          <p class="hero-text">
+            Desenvolvo experiências web responsivas com foco em usabilidade, organização da informação
+            e código bem estruturado. Hoje, atuo em projetos do PET Ciências Computacionais da FURG.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#projetos">Conhecer os projetos</a>
+            <a class="button ghost" href="#contato">Entrar em contato</a>
+          </div>
+        </div>
+        <figure class="portrait">
+          <img src="assets/yan.jpeg" alt="Foto de Yan Veiga">
+          <figcaption>Rio Grande, RS</figcaption>
+        </figure>
+      </section>
+
+      <section class="section intro-strip reveal" aria-label="Resumo">
+        <p>Design de interfaces, HTML, CSS, JavaScript e React aplicados em produtos reais.</p>
+        <span>Rio Grande, RS</span>
+      </section>
+
+      <section class="section projects" id="projetos">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Projetos selecionados</p>
+          <h2>Trabalhos com contexto, interface e resultado.</h2>
+        </div>
+
+        <article class="project project-feature reveal">
+          <a class="project-media" href="https://mapafurg.vercel.app" target="_blank" rel="noreferrer" aria-label="Abrir o projeto Mapa FURG">
+            <img src="assets/mapa-furg.png" alt="Tela do Mapa FURG com marcadores no campus">
+          </a>
+          <div class="project-content">
+            <span class="project-number">01</span>
+            <h3><a class="project-title-link" href="https://mapafurg.vercel.app" target="_blank" rel="noreferrer">Mapa FURG</a></h3>
+            <p>
+              Aplicação para localizar prédios e serviços no campus, com busca, detalhes dos locais,
+              marcadores e estados de conexão para informações em tempo real.
+            </p>
+            <ul class="tags">
+              <li>React</li>
+              <li>Leaflet</li>
+              <li>PWA</li>
+            </ul>
+            <div class="project-links">
+              <a href="https://github.com/yankveiga/mapafurg" target="_blank" rel="noreferrer">Código</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project reverse reveal">
+          <a class="project-media" href="https://portal-pet-c3.onrender.com/" target="_blank" rel="noreferrer" aria-label="Abrir o projeto Portal PET C3">
+            <img src="assets/portal-planner.png" alt="Tela do Portal PET C3 com visualização de planejamentos">
+          </a>
+          <div class="project-content">
+            <span class="project-number">02</span>
+            <h3><a class="project-title-link" href="https://portal-pet-c3.onrender.com/" target="_blank" rel="noreferrer">Portal PET C3</a></h3>
+            <p>
+              Portal interno para organizar atividades, planejamentos, relatórios e processos do grupo,
+              reduzindo dispersão de tarefas e facilitando acompanhamento.
+            </p>
+            <ul class="tags">
+              <li>Dashboard</li>
+              <li>Processos</li>
+              <li>Relatórios</li>
+            </ul>
+            <div class="project-links">
+              <a href="https://github.com/yankveiga/Portal_PET" target="_blank" rel="noreferrer">Código</a>
+            </div>
+          </div>
+        </article>
+
+        <article class="project reveal">
+          <a class="project-media" href="https://petc3.vercel.app" target="_blank" rel="noreferrer" aria-label="Abrir o projeto Site PET C3">
+            <img src="assets/site-pet.png" alt="Imagem de destaque do Site PET C3">
+          </a>
+          <div class="project-content">
+            <span class="project-number">03</span>
+            <h3><a class="project-title-link" href="https://petc3.vercel.app" target="_blank" rel="noreferrer">Site PET C3</a></h3>
+            <p>
+              Site institucional com foco em hierarquia de conteúdo, responsividade, navegação clara
+              e apresentação dos projetos do PET para a comunidade.
+            </p>
+            <ul class="tags">
+              <li>HTML</li>
+              <li>CSS</li>
+              <li>JavaScript</li>
+            </ul>
+            <div class="project-links">
+              <a href="https://github.com/PETC3/SitePETC3" target="_blank" rel="noreferrer">Código</a>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section class="section compact-work reveal" aria-label="Outros trabalhos">
+        <div>
+          <p class="eyebrow">Outros trabalhos</p>
+          <h2>Wild Jumper</h2>
+          <p>Experimento web com linguagem visual de jogo, útil para explorar interação, ritmo e publicação de projetos leves.</p>
+        </div>
+        <img src="assets/wildjumper.png" alt="Imagem de destaque do projeto Wild Jumper">
+      </section>
+
+      <section class="section about reveal" id="sobre">
+        <div>
+          <p class="eyebrow">Sobre</p>
+          <h2>Aprender, testar e construir.</h2>
+        </div>
+        <div class="about-copy">
+          <p>
+            Gosto de aprender na prática: testar uma ideia, entender o que funciona e melhorar a cada tentativa.
+            É por isso que o front-end me encanta. Para mim, construir uma interface lembra erguer um castelo
+            de areia na praia: cada detalhe muda o resultado, e a ideia vai ganhando forma diante dos olhos.
+          </p>
+          <div class="experience-list">
+            <span>Interfaces responsivas</span>
+            <span>Sistemas acadêmicos</span>
+            <span>Automação de processos</span>
+            <span>Documentação e melhoria contínua</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="section contact reveal" id="contato">
+        <p class="eyebrow">Contato</p>
+        <h2>Vamos conversar sobre o próximo projeto?</h2>
+        <div class="contact-grid">
+          <a href="https://github.com/yankveiga" target="_blank" rel="noreferrer">GitHub</a>
+          <a href="https://instagram.com/yanveigav" target="_blank" rel="noreferrer">Instagram</a>
+          <a href="https://wa.me/5551992497473?text=Ol%C3%A1%2C%20Yan%21%20Vi%20seu%20portf%C3%B3lio%20e%20gostaria%20de%20conversar." target="_blank" rel="noreferrer">WhatsApp</a>
+          <button class="copy-email" type="button" data-email="yanveigav@gmail.com">Copiar e-mail</button>
+        </div>
+      </section>
+    </main>
+
+    <button class="back-to-top" type="button" aria-label="Voltar ao topo" title="Voltar ao topo">
+      <span aria-hidden="true">↑</span>
+    </button>
+
+    <footer class="footer">
+      <span>Yan Veiga</span>
+      <span>Portfólio publicado com GitHub Pages.</span>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
