@@ -69,14 +69,21 @@ window.addEventListener("resize", () => {
 
 copyButton?.addEventListener("click", async () => {
   const email = copyButton.dataset.email;
+  const copyLabel = copyButton.querySelector(".contact-label");
   try {
     await navigator.clipboard.writeText(email);
-    copyButton.textContent = "E-mail copiado";
+    if (copyLabel) {
+      copyLabel.textContent = "E-mail copiado";
+    }
     setTimeout(() => {
-      copyButton.textContent = "Copiar e-mail";
+      if (copyLabel) {
+        copyLabel.textContent = "Copiar e-mail";
+      }
     }, 1800);
   } catch {
-    copyButton.textContent = email;
+    if (copyLabel) {
+      copyLabel.textContent = email;
+    }
   }
 });
 

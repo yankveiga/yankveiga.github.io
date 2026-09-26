@@ -156,16 +156,6 @@ button:focus-visible {
   transform-origin: left;
 }
 
-.nav-cta {
-  padding: 10px 16px;
-  border: 1px solid var(--navy);
-  border-radius: 999px;
-}
-
-.nav-cta::after {
-  display: none;
-}
-
 .theme-toggle {
   position: relative;
   display: grid;
@@ -333,7 +323,17 @@ h3 {
 .ghost,
 .copy-email {
   color: var(--navy);
-  background: transparent;
+  background: var(--white);
+}
+
+.ghost {
+  color: var(--paper);
+  background: var(--navy);
+}
+
+.ghost:hover {
+  color: var(--paper);
+  background: var(--navy);
 }
 
 .portrait {
@@ -669,17 +669,19 @@ h3 {
 
 .contact-grid a,
 .contact-grid button {
+  position: relative;
   min-height: 86px;
   border: 1px solid var(--navy);
   border-radius: 8px;
-  background: transparent;
+  background: var(--white);
   color: var(--navy);
   font-weight: 900;
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
   cursor: pointer;
-  transition: background 180ms ease, color 180ms ease, transform 180ms ease;
+  transition: background 220ms ease, color 220ms ease, transform 220ms ease;
 }
 
 .contact-grid a:hover,
@@ -687,6 +689,37 @@ h3 {
   color: var(--paper);
   background: var(--navy);
   transform: translateY(-2px);
+}
+
+.contact-label,
+.contact-icon {
+  pointer-events: none;
+  transition: opacity 180ms ease, transform 180ms ease;
+}
+
+.contact-label {
+  transform: translateY(0);
+}
+
+.contact-icon {
+  position: absolute;
+  width: 26px;
+  height: 26px;
+  fill: currentColor;
+  opacity: 0;
+  transform: translateY(18px) scale(0.86);
+}
+
+.contact-link:hover .contact-label,
+.contact-link:focus-visible .contact-label {
+  opacity: 0;
+  transform: translateY(-16px);
+}
+
+.contact-link:hover .contact-icon,
+.contact-link:focus-visible .contact-icon {
+  opacity: 1;
+  transform: translateY(0) scale(1);
 }
 
 .footer {
@@ -730,9 +763,14 @@ h3 {
 }
 
 .back-to-top:hover {
-  color: var(--navy);
-  background: var(--butter);
+  color: #122c46;
+  background: #f3e5ab;
   transform: translateY(-3px);
+}
+
+:root[data-theme="dark"] .back-to-top:hover {
+  color: #faf8f0;
+  background: #e44532;
 }
 
 .reveal {
@@ -873,12 +911,6 @@ h3 {
     align-items: center;
     min-height: 44px;
     padding: 12px 4px;
-  }
-
-  .nav-cta {
-    justify-content: center;
-    border-radius: 8px;
-    text-align: center;
   }
 
   .theme-toggle {
